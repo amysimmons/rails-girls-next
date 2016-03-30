@@ -15,7 +15,12 @@ def roman(n)
     1000 => "M"
   }
 
-  return numbers[n];
+  if n.is_a?(Integer)
+    return numbers[n]
+  else
+    return "Cannot convert a string to Roman numerals"
+  end
+
 end
 
 require "minitest/spec"
