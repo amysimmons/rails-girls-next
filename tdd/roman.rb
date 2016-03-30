@@ -2,53 +2,25 @@ require "pry"
 
 def roman(n)
 
-  # numbers = {
-  #   1 => "I",
-  #   5 => "V",
-  #   10 => "X",
-  #   50 => "L",
-  #   100=> "C",
-  #   500 => "D",
-  #   1000 => "M"
-  # }
+  numbers = {
+    1000 => "M",
+    500 => "D",
+    100=> "C",
+    50 => "L",
+    10 => "X",
+    5 => "V",
+    1 => "I"
+  }
 
   numeral = []
 
   if n.is_a?(Integer)
 
-    if (n / 1000) > 0
-      (n / 1000).times do numeral.push("M") end
-      n = (n % 1000)
-    end
-
-    if (n / 500) > 0
-      (n / 500).times do numeral.push("D") end
-      n = (n % 500)
-    end
-
-    if (n / 100) > 0
-      (n / 100).times do numeral.push("C") end
-      n = (n % 100)
-    end
-
-    if (n / 50) > 0
-      (n / 50).times do numeral.push("L") end
-      n = (n % 50)
-    end
-
-    if (n / 10) > 0
-      (n / 10).times do numeral.push("X") end
-      n = (n % 10)
-    end
-
-    if (n / 5) > 0
-      (n / 5).times do numeral.push("V") end
-      n = (n % 5)
-    end
-
-    if (n / 1) > 0
-      (n / 1).times do numeral.push("I") end
-      n = (n % 1)
+    numbers.each do | k, v |
+      if (n / k) > 0
+        (n / k).times do numeral.push(v) end
+        n = (n % k)
+      end
     end
 
     return numeral.join
