@@ -4,9 +4,11 @@ This repo is for me to go through the workshops that we will be running.
 
 They include:
 
-[Test Driven Development][tdd]
-[Ruby ATM][atm[
-[Ruby on Rails Install Fest Blog][blog]
+*[Test Driven Development][tdd]
+
+*[Ruby ATM][atm]
+
+*[Ruby on Rails Install Fest Blog][blog]
 
 [tdd]: http://guides.railsgirls.com/test-driven-development
 [atm]: http://guides.railsgirls.com/ruby-atm
