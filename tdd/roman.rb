@@ -25,4 +25,8 @@ describe "roman" do
   it "converts the number 1 to the string I" do
     roman(1).must_equal "I"
   end
+
+  it "returns error message when string is passed to roman" do
+    roman("1").must_equal "Cannot convert a string to Roman numerals"
+  end
 end
