@@ -1,43 +1,30 @@
 def withdraw(amount)
 
   notes = []
-  value20 = 20
-  valueTen = 10
-  valueFive = 5
+  values = [20, 10, 5]
 
   if amount <= 0 # this deals with some of the situations...
     return false
   end
 
-  if amount % value20 == 0 || amount % valueTen == 0 || amount % valueFive == 0
-
-    #pushes all 20s into array
-    (amount / value20).times do notes << value20 end
-
-    #gets the remaining amount after 20s are given
-    amount = amount % value20
-
-    #pushes all 10s into array
-    (amount / valueTen).times do notes << valueTen end
-
-    #gets the remaining amount after tens are given
-    amount = amount % valueTen
-
-    #pushes all 5s into the array
-      (amount / valueFive).times do notes << valueFive end
-
-    return notes
-
-  else
+  #checks if the amount is divisible by the smallest note
+  if amount % values.min != 0
     return false
   end
+
+  values.each do |v|
+    (amount / v).times do notes << v end
+    amount = amount % v
+  end
+
+  return notes
+
 end
 
 # import required testing libraries
 require 'minitest/spec'
 require 'minitest/autorun'
 
-# Replace your existing tests with the ones below.
 # Replace your existing tests with the ones below.
 describe 'atm' do
   [
