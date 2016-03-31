@@ -1,12 +1,14 @@
 def withdraw(amount)
+
   notes = []
+  value = 10
 
   if amount <= 0 # this deals with some of the situations...
     return false
   end
 
-  if amount % 10 == 0
-    (amount / 10).times do notes << 10 end
+  if amount % value == 0
+    (amount / value).times do notes << value end
     return notes
   else
     return false
