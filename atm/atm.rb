@@ -5,8 +5,8 @@ def withdraw(amount)
     return false
   end
 
-  if amount % 5 == 0
-    (amount / 5).times do notes << 5 end
+  if amount % 10 == 0
+    (amount / 10).times do notes << 10 end
     return notes
   else
     return false
@@ -28,8 +28,8 @@ describe 'atm' do
     [0, false],
     [1, false],
     [43, false],
-    [20, [5, 5, 5, 5]],
-    [35, [5, 5, 5, 5, 5, 5, 5]],
+    [20, [10, 10]],
+    [35, false],
   ].each do |input, expected|
     it "should return #{expected} when $#{input} is withdrawn" do
       withdraw(input).must_equal expected
