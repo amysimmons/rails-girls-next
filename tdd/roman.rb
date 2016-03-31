@@ -4,11 +4,17 @@ def roman(n)
 
   numbers = {
     1000 => "M",
+    900 => "CM",
     500 => "D",
-    100=> "C",
+    400 => "CD",
+    100 => "C",
+    90 => "XC",
     50 => "L",
+    40 => "XL",
     10 => "X",
+    9 => "IX",
     5 => "V",
+    4 => "IV",
     1 => "I"
   }
 
@@ -44,7 +50,7 @@ describe "roman" do
   end
 
   it "converts the number 4 to the string IIII" do
-    roman(4).must_equal "IIII"
+    roman(4).must_equal "IV"
   end
 
   it "converts the number 6 to the string VI" do
@@ -59,7 +65,15 @@ describe "roman" do
     roman(10).must_equal "X"
   end
 
-  it "converts the number 3120 to the string MMMCXX" do
+  it "converts the number 14 to the string XIV" do
+    roman(14).must_equal "XIV"
+  end
+
+  it "converts the number 2896 to the string MMDCCCXCVI" do
+    roman(2896).must_equal "MMDCCCXCVI"
+  end
+
+  it "converts the number 3127 to the string MMMCXXVII" do
     roman(3127).must_equal "MMMCXXVII"
   end
 
