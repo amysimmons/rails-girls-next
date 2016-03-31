@@ -17,19 +17,15 @@ end
 require 'minitest/spec'
 require 'minitest/autorun'
 
-# BELOW ARE THE TESTS FOR AUTOMATICALLY CHECKING YOUR SOLUTION.
-# THESE TESTS ARE FOR STEP 1.
-# THESE NEED TO BE REPLACED AFTER EACH STEP.
-# Replace your existing tests with the ones below.
 # Replace your existing tests with the ones below.
 describe 'atm' do
   [
     [-1, false],
     [0, false],
-    [1, false],
-    [43, false],
+    [7, false],
+    [45, false],
     [20, [10, 10]],
-    [35, false],
+    [40, [10, 10, 10, 10]],
   ].each do |input, expected|
     it "should return #{expected} when $#{input} is withdrawn" do
       withdraw(input).must_equal expected
