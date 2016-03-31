@@ -1,7 +1,7 @@
 def withdraw(amount)
 
   notes = []
-  values = [20, 10, 5]
+  values = [50, 20, 10, 5]
 
   if amount <= 0 # this deals with some of the situations...
     return false
@@ -34,9 +34,9 @@ describe 'atm' do
     [53, false],
     [35, [20, 10, 5]],
     [40, [20, 20]],
-    [65, [20, 20, 20, 5]],
-    [70, [20, 20, 20, 10]],
-    [75, [20, 20, 20, 10, 5]],
+    [50, [50]],
+    [51, false],
+    [115, [50, 50, 10, 5]]
   ].each do |input, expected|
     it "should return #{expected} when $#{input} is withdrawn" do
       withdraw(input).must_equal expected
